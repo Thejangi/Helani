@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Spin-off of "Project: Recipe book"</title>
+        <style>
+            body{
+                background-color: rgb(242, 242, 242);
+            }
+            
+            h1{
+                color: rgb(219, 68, 55);
+                text-align: center;
+                font-size: 55px;
+                line-height: 0.001px;
+            }
+            
+            .recipes_col{
+                
+            }
+            
+            .recipes_col h2{
+               color: rgb(244, 180, 0);
+               font-size: 30px;
+               line-height: 0.001px;
+               padding-top: 10px;
+            }
+            
+            .recipe_links{
+                color: rgb(66, 133, 244);
+                text-align: center;
+            }
+            
+            .recipe_links ol li{
+                list-style: none;
+                display: inline-block;
+            }
+            
+            .recipe_links ol li a{
+                color: rgb(66, 133, 244);
+                text-decoration: none;
+                font-size: 20px;
+                cursor: pointer;
+            }
+            
+            .recipe_links ol li a:hover{
+                text-decoration: underline;
+            }
+            
+            .recipe_links ol li a img{
+                width: 200px;
+                display: flex;
+                margin: 10px;
+                border: 3px solid rgb(66, 133, 244);
+            }
+            
+            .recipe_links ol li a img:hover{
+                opacity: 0.7;
+            }
+            
+            #kimbap{
+                background-color: rgb(255, 255, 255);
+                color: rgb(0, 0, 0);
+                padding: 2px 25px;
+                border: 2px solid rgb(15, 157, 88);
+                margin-bottom: 10px;
+            }
+            
+            #kimbap h2{
+                color: rgb(15, 157, 88);
+                text-align: center;
+                text-shadow: 1px 1px rgb(66, 133, 244);
+                font-size: 30px;
+            }
+            
+            #kimbap ul li{
+                list-style: none;
+                display: inline-block;
+                padding: 5px;
+            }
+            
+            #kimbap .table_kimbap{
+                border: 1px solid rgb(15, 157, 88);
+                border-collapse: collapse;
+                margin-right: auto;
+                margin-left: auto;
+            }
+            
+            #kimbap .table_kimbap th, td{
+                border: 1px solid rgb(15, 157, 88);
+                padding: 5px;
+            }
+            
+            #kimbap .table_kimbap th{
+                background-color: rgb(15, 157, 88);
+                color: rgb(255, 255, 255);
+                text-shadow: 1px 1px rgb(0, 0, 0);
+                font-size: 18px;
+            }
+            
+            #kimbap .table_kimbap tr:hover{
+                background-color: rgb(227, 230, 229);  
+            }
+            
+            #kimbap .table_kimbap .sub_header{
+                background-color: rgb(173, 222, 198);
+                color: rgb(0, 0, 0);
+                text-shadow: 1px 1px rgb(15, 157, 88);
+                text-align: center;
+                font-weight: bold;
+            }
+            
+            .source a{
+                text-decoration: none;
+                color: rgb(66, 133, 244);
+            }
+            
+            #pasta{
+                background-color: rgb(255, 255, 255);
+                color: rgb(0, 0, 0);
+                padding: 2px 25px;
+                border: 2px solid rgb(15, 157, 88);
+                margin-bottom: 10px;
+            }
+            
+            #pasta h2{
+                color: rgb(15, 157, 88);
+                text-align: center;
+                text-shadow: 1px 1px rgb(66, 133, 244);
+                font-size: 30px;
+            }
+            
+            #pasta ul li{
+                list-style: none;
+                display: inline-block;
+                padding: 5px;
+            }
+            
+            #pasta .table_pasta{
+                border: 1px solid rgb(15, 157, 88);
+                border-collapse: collapse;
+                margin-right: auto;
+                margin-left: auto;
+            }
+            
+            #pasta .table_pasta th, td{
+                border: 1px solid rgb(15, 157, 88);
+                padding: 5px;
+            }
+            
+            #pasta .table_pasta th{
+                background-color: rgb(15, 157, 88);
+                color: rgb(255, 255, 255);
+                text-shadow: 1px 1px rgb(0, 0, 0);
+                font-size: 18px;
+            }
+            
+            #pasta .table_pasta tr:hover{
+                background-color: rgb(227, 230, 229);  
+            }
+            
+            #snapper{
+                background-color: rgb(255, 255, 255);
+                color: rgb(0, 0, 0);
+                padding: 2px 25px;
+                border: 2px solid rgb(15, 157, 88);
+                margin-bottom: 10px;
+            }
+            
+            #snapper h2{
+                color: rgb(15, 157, 88);
+                text-align: center;
+                text-shadow: 1px 1px rgb(66, 133, 244);
+                font-size: 30px;
+            }
+            
+            #snapper ul li{
+                list-style: none;
+                display: inline-block;
+                padding: 5px;
+            }
+            
+            #snapper .table_snapper{
+                border: 1px solid rgb(15, 157, 88);
+                border-collapse: collapse;
+                margin-right: auto;
+                margin-left: auto;
+            }
+            
+            #snapper .table_snapper th, td{
+                border: 1px solid rgb(15, 157, 88);
+                padding: 5px;
+            }
+            
+            #snapper .table_snapper th{
+                background-color: rgb(15, 157, 88);
+                color: rgb(255, 255, 255);
+                text-shadow: 1px 1px rgb(0, 0, 0);
+                font-size: 18px;
+            }
+            
+            #snapper .table_snapper tr:hover{
+                background-color: rgb(227, 230, 229);  
+            }
+            
+            #snapper .table_snapper .sub_header{
+                background-color: rgb(173, 222, 198);
+                color: rgb(0, 0, 0);
+                text-shadow: 1px 1px rgb(15, 157, 88);
+                text-align: center;
+                font-weight: bold;
+            }
+            
+            #hamburger{
+                background-color: rgb(255, 255, 255);
+                color: rgb(0, 0, 0);
+                padding: 2px 25px;
+                border: 2px solid rgb(15, 157, 88);
+                margin-bottom: 10px;
+            }
+            
+            #hamburger h2{
+                color: rgb(15, 157, 88);
+                text-align: center;
+                text-shadow: 1px 1px rgb(66, 133, 244);
+                font-size: 30px;
+            }
+            
+            #hamburger ul li{
+                list-style: none;
+                display: inline-block;
+                padding: 5px;
+            }
+            
+            #hamburger .table_hamburger{
+                border: 1px solid rgb(15, 157, 88);
+                border-collapse: collapse;
+                margin-right: auto;
+                margin-left: auto;
+            }
+            
+            #hamburger .table_hamburger th, td{
+                border: 1px solid rgb(15, 157, 88);
+                padding: 5px;
+            }
+            
+            #hamburger .table_hamburger th{
+                background-color: rgb(15, 157, 88);
+                color: rgb(255, 255, 255);
+                text-shadow: 1px 1px rgb(0, 0, 0);
+                font-size: 18px;
+            }
+            
+            #hamburger .table_hamburger tr:hover{
+                background-color: rgb(227, 230, 229);  
+            }
+            
+            .more_recipes_col{
+              width: 23%;
+              float: left;
+              padding: 5px;
+            }
+            
+            .more_recipes_row::after {
+              content: "";
+              clear: both;
+              display: table;
+            }
+            
+            .recipe{
+                position: relative;
+                width: 100%;
+                max-width: 400px;
+                text-align: center;
+            }
+            
+            .recipe .center{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0.7;
+                color: rgb(244, 180, 0);
+                background-color: rgb(242, 242, 242);
+                border: 0.5px solid rgb(242, 242, 242);
+                padding: 2px 2px;
+                cursor: pointer;
+                font-size: 18px;
+            }
+            
+            .recipe .center:hover{
+                opacity: 0.7;
+                background-color: rgb(15, 157, 88);
+                border: 0.5px solid rgb(15, 157, 88);
+            }
+            
+            .recipe img{
+                width: 100%;
+                height: auto;
+                opacity: 1;
+                transition: 0.5s;
+                border: 2px solid rgb(66, 133, 244);
+                border-radius: 10px;
+                cursor: context-menu;
+            }
+}
+        </style>
+    </head>
+    <body>
+        <h1>Hela's Recipe Book</h1>
+        
+        <div class="recipes_col">
+            <h2>Contents:</h2>
+        
+            <div class="recipe_links">
+                <ol>
+                    <li>
+                        <a href="#kimbap" target="_parent">
+                            Kimbap
+                            <img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/food/shish-kebab.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#pasta" target="_parent">
+                            Garlic Chilli Prawn Pasta
+                            <img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/food/pasta.png">
+                        </a>
+                    </li> 
+                    <li>
+                        <a href="#snapper" target="_parent">
+                            Grilled Whole Red Snapper
+                            <img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/food/fish_grilled-snapper.png">
+                        </a>
+                    </li> 
+                    <li>
+                        <a href="#hamburger" target="_parent">
+                            Hamburger
+                            <img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/food/hamburger.png">
+                        </a>
+                    </li> 
+                </ol>
+            </div>
+        </div>
+        
+        <!-- === kimbap === -->
+        <div id="kimbap">
+            <h2>Kimbap (or Gimbap)</h2>
+        
+            <ul>
+                <li>Time: 50 minutes</li>
+                <li>Serves: _</li>
+            </ul>
+        
+            <table class="table_kimbap">
+            <thead>
+                <tr>
+                    <th>Ingredients</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>uncooked short grain rice</td>
+                    <td>2 cups</td>
+                </tr>
+                <tr>
+                    <td>sesame oil</td>
+                    <td>1 tablespoon</td>
+                </tr>
+                <tr>
+                    <td>salt</td>
+                    <td>to taste</td>
+                </tr>
+                <tr class="sub_header">
+                    <td colspan="2">For the beef</td>
+                </tr>
+                <tr>
+                    <td>lean tender beef, cut into 1/2 inch-thick long strips</td>
+                    <td>8 ounces</td>
+                </tr>
+                <tr>
+                    <td>soy sauce</td>
+                    <td>2 teaspoons</td>
+                </tr>
+                <tr>
+                    <td>rice wine</td>
+                    <td>1 teaspoon</td>
+                </tr>
+                <tr>
+                    <td>sugar</td>
+                    <td>1 teaspoon</td>
+                </tr>
+                <tr>
+                    <td>sesame oil</td>
+                    <td>1 teaspoon</td>
+                </tr>
+                <tr>
+                    <td>minced garlic</td>
+                    <td>1/2 teaspoon</td>
+                </tr>
+                <tr class="sub_header">
+                    <td colspan="2">For the vegetables</td>
+                </tr>
+                <tr>
+                    <td>spinach</td>
+                    <td>1 bunch - about 8 ounces</td>
+                </tr>
+                <tr>
+                    <td>sesame oil</td>
+                    <td>1 teaspoons</td>
+                </tr>
+                <tr>
+                    <td>salt</td>
+                    <td>to taste - about 1/4 teaspoon</td>
+                </tr>
+                <tr>
+                    <td>carrots</td>
+                    <td>2 medium</td>
+                </tr>
+                <tr>
+                    <td>yellow pickled radish</td>
+                    <td>5</td>
+                </tr>
+                <tr class="sub_header">
+                    <td colspan="2">For the fish cake</td>
+                </tr>
+                <tr>
+                    <td>fish cake</td>
+                    <td>1 sheet</td>
+                </tr>
+                <tr>
+                    <td>soy sauce</td>
+                    <td>1 teaspoons</td>
+                </tr>
+                <tr>
+                    <td>sugar</td>
+                    <td>1/2 teaspoon</td>
+                </tr>
+                <tr>
+                    <td>sesame oil</td>
+                    <td>1/2 teaspoon</td>
+                </tr>
+                <tr>
+                    <td>eggs</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>gimbap gim, seaweed sheets</td>
+                    <td>5</td>
+                </tr>
+            </tbody>
+        </table>
+        
+            <p>
+                <strong>Step 1:</strong> 
+                Cook the rice using a little less water than usual. (Freshly cooked rice is best for gimbap.)
+            </p>
+            <p>
+                <strong>Step 2:</strong> 
+                Cut the beef into thin strips (about 1/2-inch thick). Mix well with the next 5 seasoning ingredients. Stir-fry over medium-high heat until cooked through, 2 - 3 minutes.
+            </p>
+            <p>
+                <strong>Step 3:</strong> 
+                Bring a large pot of water to a boil over high heat and prepare an ice bath. Blanch the spinach, place immediately in the ice bath, then squeeze out water. Season with the sesame oil and salt.
+            </p>
+            <p>
+                <strong>Step 4:</strong> 
+                Julienne the carrots. Heat a lightly oiled pan over medium-high heat. Stir-fry the carrots until softened. Lightly season with a pinch of salt.
+            </p>
+            <p>
+                <strong>Step 5:</strong> 
+                Cut the pickled radish lengthwise into 1/2-inch thick strips (unless you bought a pre-cut package).
+            </p>
+            <p>
+                <strong>Step 6:</strong> 
+                Crack and beat the eggs, in a bowl with a spoon or a fork. Stir in a pinch of salt. Heat a small non-stick pan over medium-low heat. Add the eggs to the pan. When the bottom is set, flip it over. Transfer to a cutting board. Cut lengthwise into 3/4-inch thick strips.
+            </p>
+            <p>
+                <strong>Step 7:</strong> 
+                Cut the fish cake lengthwise into 3/4-inch thick strips. Heat the pan with a little bit of oil over medium heat. Stir fry with the soy sauce, sugar, sesame oil and a little bit (about 1 teaspoon) of vegetable oil over medium heat until softened, about 2 minutes.
+            </p>
+            <p>
+                <strong>Step 8:</strong> 
+                Arrange all the ingredients together on a plate.When all the other ingredients are ready, remove the rice from the rice cooker.
+            </p>
+            <p>
+                <strong>Step 9:</strong> 
+                While the rice is still hot, add the sesame oil and salt. Mix well by lightly folding with a rice paddle or large spoon until evenly seasoned. Add more salt to taste. The rice will cool down during this process and be ready to be used.
+            </p>
+            <p>
+                <strong>Step 10:</strong> 
+                Put a sheet of nori, shiny side down and longer side towards you, on a cutting board or a bamboo mat if available. Spread about 3/4 cup to 1 cup of rice evenly over the seaweed sheet, using a rice paddle or your fingers preferably.
+            </p>
+            <p>
+                <strong>Step 11:</strong> 
+                Lay the prepared ingredients on top of the rice close to the side toward you.
+            </p>
+            <p>
+                <strong>Step 12:</strong> 
+                Lift the entire bottom edge with both hands and roll over the filling away from you, tucking in the filling with your fingers.
+            </p>
+            <p>
+                <strong>Step 13:</strong> 
+                Put firm pressure over the roll with the help of the bamboo mat, if using, to close everything in tightly. Then, continue to roll again, putting pressure evenly over the roll using both hands.
+            </p>
+            <p>
+                <strong>Step 14:</strong> 
+                Rub or brush the roll with a little bit of sesame oil for extra flavor and shiny look. Apply a little bit of sesame oil to a sharp knife. (This will keep rice from sticking to the knife. Repeat as necessary after each cut. Wipe the knife with a damp towel if the rice still sticks.) Cut the roll into 1/2-inch thick bite sizes.
+            </p>
+        
+            <p class="source">
+                <em>Source: <a href="https://www.koreanbapsang.com/gimbapkimbap-korean-dried-seaweed-rolls/" target="_blank">www.koreanbapsang.com</a></em>
+            </p>
+        </div>
+        
+        <!-- === pasta === -->
+        <div id="pasta">
+            <h2>Garlic chilli prawn pasta</h2>
+        
+            <ul>
+                <li>Time: 15 minutes</li>
+                <li>Serves: 2</li>
+            </ul>
+        
+            <table class="table_pasta">
+            <thead>
+                <tr>
+                    <th>Ingredients</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>dried angel hair pasta</td>
+                    <td>100g </td>
+                </tr>
+                <tr>
+                    <td>extra virgin olive oil</td>
+                    <td>2 tablespoon</td>
+                </tr>
+                <tr>
+                    <td>garlic cloves, crushed</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>chilli flakes</td>
+                    <td>1/2 tablespoon</td>
+                </tr>
+                <tr>
+                    <td>salt</td>
+                    <td>1/2 teaspoons</td>
+                </tr>
+                <tr>
+                    <td>green prawns, peeled, tails intact</td>
+                    <td>200g</td>
+                </tr>
+                <tr>
+                    <td>lemon juice</td>
+                    <td>1 1/2 teaspoon</td>
+                </tr>
+                <tr>
+                    <td>finely chopped fresh continental parsley leaves</td>
+                    <td>1 1/2</td>
+                </tr>
+                <tr>
+                    <td>Extra virgin olive oil, to serve</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        
+            <p>
+                <strong>Step 1:</strong> 
+                Cook pasta in a large saucepan of boiling, salted water following packet directions until tender. Drain. Cover to keep warm.
+            </p>
+            <p>
+                <strong>Step 2:</strong> 
+                Meanwhile, heat oil in a large, deep frying pan over medium-high heat. Add garlic, chilli and salt. Cook, stirring, for 1 to 2 minutes or until fragrant. Add prawns. Cook, stirring, for 3 to 4 minutes or until prawns turn pink and are almost cooked through.
+            </p>
+            <p>
+                <strong>Step 3:</strong> 
+                Add pasta, lemon juice and parsley to pan. Cook, tossing, for 1 minute or until combined and prawns are cooked through. Serve drizzled with oil.
+            </p>
+            <p class="source">
+                <em>Source: <a href="https://www.taste.com.au/recipes/garlic-chilli-prawn-pasta-recipe-two/rejjyf52?r=recipes/easypastarecipes&c=7c7c59bb-9252-4cf1-8a90-6cbc452033a9/Easy%20pasta%20recipes" target="_blank">www.taste.com</a></em>
+            </p>
+        </div>
+        
+        <!-- === snapper === -->
+        <div id="snapper">
+            <h2>Grilled Whole Red Snapper</h2>
+        
+            <ul>
+                <li>Time: 30 minutes</li>
+                <li>Serves: 4</li>
+            </ul>
+        
+            <table class="table_snapper">
+            <thead>
+                <tr>
+                    <th>Ingredients</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>One whole red snapper, cleaned and scaled</td>
+                    <td>3 pound</td>
+                </tr>
+                <tr class="sub_header">
+                    <td colspan="2">Asian Ingredients</td>
+                </tr>
+                <tr>
+                    <td>chopped cilantro</td>
+                    <td>1/4 cup</td>
+                </tr>
+                <tr>
+                    <td>sesame oil</td>
+                    <td>1 teaspoons</td>
+                </tr>
+                <tr>
+                    <td>minced fresh ginger</td>
+                    <td>2 tablespoons </td>
+                </tr>
+                <tr>
+                    <td>scallions, finely chopped</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>garlic clove, minced</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Asian sesame oil</td>
+                    <td>1 teaspoon</td>
+                </tr>
+                <tr>
+                    <td>canola oil, plus more for rubbing</td>
+                    <td>1 teaspoon</td>
+                </tr>
+                <tr class="sub_header">
+                    <td colspan="2">Mediterranean Ingredients</td>
+                </tr>
+                <tr>
+                    <td>Mediterranean Ingredients</td>
+                    <td>1/4 cup</td>
+                </tr>
+                <tr>
+                    <td>soy sauce</td>
+                    <td>1 teaspoons</td>
+                </tr>
+                <tr>
+                    <td>salted capers, rinsed and finely chopped</td>
+                    <td>2 tablespoons</td>
+                </tr>
+                <tr>
+                    <td>garlic cloves, minced</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>crushed red pepper</td>
+                    <td>1/2 teaspoon</td>
+                </tr>
+                <tr>
+                    <td>canola oil, plus more for rubbing</td>
+                    <td>1 teaspoon</td>
+                </tr>
+                <tr class="sub_header">
+                    <td colspan="2">Caribbean Ingredients</td>
+                </tr>
+                <tr>
+                    <td>minced fresh ginger</td>
+                    <td>1/4 cup</td>
+                </tr>
+                <tr>
+                    <td>soy sauce</td>
+                    <td>1 teaspoons</td>
+                </tr>
+                <tr>
+                    <td>salted capers, rinsed and finely chopped</td>
+                    <td>2 tablespoons</td>
+                </tr>
+                <tr>
+                    <td>garlic cloves, minced</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>crushed red pepper</td>
+                    <td>1/2 teaspoon</td>
+                </tr>
+                <tr>
+                    <td>canola oil, plus more for rubbing</td>
+                    <td>1 teaspoon</td>
+                </tr>
+            </tbody>
+        </table>
+        
+            <p>
+                <strong>Step 1:</strong> 
+                Pick your favorite flavor combination (Asian, Mediterranean or Caribbean, at left).
+            </p>
+            <p>
+                <strong>Step 2:</strong> 
+                Choose one of the flavor combinations and chop all of the ingredients except the oil together with a large pinch of salt. Transfer the paste to a small bowl and stir in the oil. Make 5 parallel 3-inch-long slashes on each side of the snapper, slicing almost through to the bone. Lightly season the fish with salt and fill the slashes with the paste. Rub the fish all over with canola oil.
+            </p>
+            <p>
+                <strong>Step 3:</strong> 
+                Light a grill and oil a grill basket that's large enough to hold the fish. Set the fish in the basket and grill over moderate heat, turning once, until the flesh just flakes with a fork, about 20 minutes. Carefully remove the fish from the basket and transfer to a platter. Using 2 forks, lift the fillets off the bones and serve.
+            </p> <p class="source">
+                <em>Source: <a href="https://www.foodandwine.com/recipes/grilled-whole-red-snapper" target="_blank">www.foodandwine.com</a></em>
+            </p>
+        </div>
+        
+        <!-- === hamburger === -->
+        <div id="hamburger">
+            <h2>Hamburger</h2>
+        
+            <ul>
+                <li>Time: 23 minutes</li>
+                <li>Serves: 6</li>
+            </ul>
+        
+            <table class="table_hamburger">
+            <thead>
+                <tr>
+                    <th>Ingredients</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ground chuck</td>
+                    <td>2 pounds </td>
+                </tr>
+                <tr>
+                    <td>crushed saltine crackers or Panko breadcrumbs</td>
+                    <td>1/2 cup</td>
+                </tr>
+                <tr>
+                    <td>large egg</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Worcestershire sauce</td>
+                    <td>2 tablespoons</td>
+                </tr>
+                <tr>
+                    <td>milk</td>
+                    <td>2 tablespoons</td>
+                </tr>
+                <tr>
+                    <td>salt</td>
+                    <td>1 teaspoon</td>
+                </tr>
+                <tr>
+                    <td>garlic powder</td>
+                    <td>1 teaspoon</td>
+                </tr>
+                <tr>
+                    <td>onion powder</td>
+                    <td>1 teaspoon</td>
+                </tr>
+                <tr>
+                    <td>black pepper</td>
+                    <td>1/2 teaspoon</td>
+                </tr>
+            </tbody>
+        </table>
+        
+            <p>
+                <strong>Step 1:</strong> 
+                Set out a large mixing bowl. Add in the ground beef, crushed crackers, egg, Worcestershire sauce, milk, salt, garlic powder, onion powder, and pepper. Mix by hand until the meat mixture is very smooth.
+            </p>
+            <p>
+                <strong>Step 2:</strong> 
+                Press the meat down in the bowl, into an even disk. Use a knife to cut and divide the hamburger patty mixture into 6 – 1/3 pound grill or skillet patties, or 12 thin griddle patties.
+            </p>
+            <p>
+                <strong>Step 3:</strong> 
+                Set out a baking sheet, lined with wax paper or foil, to hold the patties. One at a time, gather the patty mix and press firmly into patties. Shape them just slightly larger than the buns you plan to use, to account for shrinkage during cooking. Set the patties on the baking sheet. Use a spoon to press a dent in the center of each patty so they don't puff up as they cook. If you need to stack the patties separate them with a sheet of wax paper.
+            </p>
+            <p>
+                <strong>Step 4:</strong> 
+                Preheat the grill or a skillet to medium heat. (Approximately 350-400 degrees F.)
+            </p>
+            <p>
+                <strong>Step 5:</strong> 
+                For thick patties: Grill or fry the patties for 3-4 minutes per side.
+            </p>
+            <p>
+                <strong>Step 6:</strong> 
+                For thin patties: Cook on the griddle for 2 minutes per side.
+            </p>
+            <p>
+                <strong>Step 7:</strong> 
+                Stack the hot patties on hamburgers buns, and top with your favorite hamburgers toppings. Serve warm.
+            </p>
+            <p class="source">
+                <em>Source: <a href="https://www.aspicyperspective.com/best-hamburger-patty-recipe/" target="_blank">www.aspicyperspective.com</a></em>
+            </p>
+        </div>
+        
+        <!-- === more recipes === -->
+        <div class="more_recipes_row">
+            <div class="more_recipes_col">
+                <div class="recipe">
+                <a href="https://bakingamoment.com/easy-homemade-croissant-recipe/" target="_blanck">
+                    <button class="center">Croissant</button>
+                    <img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/food/croissant.png">
+                </a>
+            </div>
+            </div>
+            <div class="more_recipes_col">
+                <div class="recipe">
+                    <a href="https://www.fifteenspatulas.com/homemade-sushi/" target="_blanck">
+                        <button class="center">Sushi</button>
+                        <img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/food/sushi.png">
+                    </a>
+            </div>
+            </div>
+            <div class="more_recipes_col">
+                <div class="recipe">
+                    <a href="https://mamalovestocook.com/chinese-dumplings-recipe/" target="_blanck">
+                        <button class="center">Dumplings </button>
+                        <img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/food/dumplings.png" style="height: 83px">
+                    </a>
+            </div>
+            </div>
+            <div class="more_recipes_col">
+                <div class="recipe">
+                    <a href="https://www.allrecipes.com/recipe/73135/homestyle-potato-chips/" target="_blanck">
+                        <button class="center">Potato Chips </button>
+                        <img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/food/potato-chips.png">
+                    </a>
+            </div>
+            </div>
+        </div>
+        
+        <!-- === footer === -->
+        <div class="footer">
+            <a href="#" class="fa fa-facebook"></a>
+        </div>
+        
+    </body>
+</html>
